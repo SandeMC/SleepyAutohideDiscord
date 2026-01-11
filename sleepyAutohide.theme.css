@@ -20,7 +20,7 @@ div[class*="sidebarList"] {
 /* User Panels */
 section[class*="panels"]:has(div[class*="container"] > div[class*="buttons"] > div[class*="micButton"]) {
     opacity: 0; 
-    pointer-events: none;
+    pointer-events: auto;
     filter: grayscale(30%);
     transition: opacity 0.3s ease-out 0.3s, filter 0.3s;
 }
@@ -60,6 +60,14 @@ body:has(nav[class*="guilds"]:hover, div[class*="sidebarList"]:hover, section[cl
     opacity: 1 !important;
     filter: grayscale(0%) !important;
     transition: opacity 0.15s ease !important;
+}
+
+body:has(div[id*="popout"] [class*="user-profile-popout"]) 
+:is(div[class*="sidebarList"], section[class*="panels"]) {
+    margin-left: 0px !important;
+    opacity: 1 !important;
+    filter: grayscale(0%) !important;
+    pointer-events: auto;
 }
 
 
